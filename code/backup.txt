@@ -1,23 +1,11 @@
-Field|UWO Computer Science|Computer Science at the Univercity of Western Ontario|To build an advanced artificial intelligence plaform|NONE|
+Field|UWO Computer Science|Computer Science at the University of Western Ontario|To help build an artificial intelligence platform|NONE|
 Course|1600: Linear Algebra|Introduction to Linear Algebra|2020|NONE|NONE|NONE|S|
-Task|2021|1|30|11|0|ksf|True|1600: Linear Algebra|
-DONE_COURSE,|
-Course|1022: Film Studies|Introduction to Film Studies|2021|NONE|NONE|NONE|S|
-Task|2020|12|29|0|0|Hand in Mise En Scene|False|1022: Film Studies|
-Task|2020|12|28|23|0|Hand in mise en scene mind map|False|1022: Film Studies|
-Task|2020|12|30|12|0|Hand in tutorial forum question|True|1022: Film Studies|
-DONE_COURSE,|
-Course|1001: Physics|Introduction to Mechanics|2021|NONE|NONE|NONE|S|
-Task|2020|12|28|9|0|Hand in kinematics quiz|True|1001: Physics|
-Task|2020|12|31|0|0|Read chapter 1|False|1001: Physics|
-DONE_COURSE,|
-Course|1020E: Politicial Science|Introduction to Political Science|2020|NONE|NONE|NONE|S|
-Task|2021|12|20|0|0|Hand in Political Science forum answer|False|1022E: Political Science|
-DONE_COURSE,|
-DONE_FIELD,|
-Field|UWO Computer Engineering|Engineering at the Univercity of Western Ontario|To create a system of working computer parts|NONE|
-Course|1077: Chemistry|Introduction to Chemistry|2021|NONE|NONE|NONE|S|
-Task|2020|12|31|12|0|Start reading about entropy|False|1077: Chemistry|
-Task|2020|12|31|12|0|Start thinking about essay topics|False|1077: Chemistry|
-DONE_COURSE,|
-DONE_FIELD,|
+Task|2020|12|30|0|0|Hand in quiz 3|True|
+Task|2020|12|30|0|0|Hand in Mise En Scene|False|
+Task|2020|12|30|0|0|Read chapter 1|False|
+DONE_COURSE,
+Course|1022: Film Studies|Analyzing Film|2021|NONE|NONE||S|
+DONE_COURSE,
+Course|1001: Physics|Introductory Physics|2021|NONE|NONE||S|
+DONE_COURSE,
+DONE_FIELD,
