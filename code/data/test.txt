@@ -1,0 +1,11 @@
+Field|UWO Computer Science|Computer Science at the University of Western Ontario|To help build an artificial intelligence platform|NONE|
+Course|1600: Linear Algebra|Introduction to Linear Algebra|2020|NONE|NONE|NONE|S|
+Task|2020|12|30|0|0|Hand in quiz 3|True|
+Task|2020|12|30|0|0|Hand in Mise En Scene|False|
+Task|2020|12|30|0|0|Read chapter 1|False|
+DONE_COURSE,
+Course|1022: Film Studies|Analyzing Film|2021|NONE|NONE||S|
+DONE_COURSE,
+Course|1001: Physics|Introductory Physics|2021|NONE|NONE||S|
+DONE_COURSE,
+DONE_FIELD,
