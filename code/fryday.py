@@ -26,7 +26,7 @@ def update_secondary_lists(fields, current_course_output, current_task_output):
 # function to return a sorted array based on time
 def sort_time(i_list):
     # i_list.sort(key=lambda item:item['date'], reverse=True)
-    return sorted(i_list, key=lambda x: x.date.strftime("%Y/%d/%m/"), reverse = True)
+    return sorted(i_list, key=lambda x: x.date.strftime("%Y/%m/%d"), reverse = True)
 
 # asking the main question
 def ask_question():
