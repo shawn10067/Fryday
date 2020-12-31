@@ -8,6 +8,7 @@ from hierarchy import Task
 from hierarchy import Course 
 import os
 import datetime
+import pathlib
 
 # function to update tasks and courses
 def update_secondary_lists(fields, current_course_output, current_task_output):
@@ -66,8 +67,10 @@ current_file = ""
 
 # determining if we are operating on a new file or not, and then taking the appropirate steps
 if answer.lower() == 'n':
+    current_file_path = pathlib.Path().absolute() 
     file_name = input("\tEnter a file name: ") 
-    full_file = "data/" + file_name + ".txt"
+    file_name += ".txt"
+    full_file = os.path.join(current_file_path, file_name)
     existing_file = False
     current_file = open(full_file, "w")
 else:
