@@ -69,7 +69,7 @@ if answer.lower() == 'n':
     file_name = input("\tEnter a file name: ") 
     full_file = "data/" + file_name + ".txt"
     existing_file = False
-    current_file = open(full_file, 'x')
+    current_file = open(full_file, "w")
 else:
     file_name = input("\tEnter the catagory you wish to Fry (file name excluding extention): ")
     while not os.path.isfile("data/%s.txt"%file_name):
