@@ -68,7 +68,8 @@ current_file = ""
 # determining if we are operating on a new file or not, and then taking the appropirate steps
 if answer.lower() == 'n':
     current_file_path = pathlib.Path().absolute() 
-    file_name = input("\tEnter a file name: ") 
+    file_name = "/data/"
+    file_name += input("\tEnter a file name: ") 
     file_name += ".txt"
     full_file = os.path.join(current_file_path, file_name)
     existing_file = False
