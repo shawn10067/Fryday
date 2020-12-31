@@ -135,10 +135,10 @@ class Field():
 
     # finished courses
     def get_finished_courses(self):
-        print("\n%s\n\tFINISHED COURSES:"%(self.name))
+        print("\n\t%s\n\t\tFINISHED COURSES:"%(self.name))
         for course in self.courses:
-            if course.status == "F":
-                print("\n\t\t%s"%(course.name))
+            if course.course_status == "D":
+                print("\n\t\t\t%s"%(course.name))
 
     # changing attributes for the course
     def change_name(self):
@@ -300,6 +300,19 @@ class Course():
     def __repr__(self):
         return "\tCOURSE:%s, YEAR: %s"%(self.name, self.year)
 
+
+    def describe_course(self):
+        print("\n\tCourse: %s\n\tDescription: %s\n\tBookmark: %s\n\tWorkload: %s\n\tYear: %s\n\tLink: %s\n\tStatus: %s"%(self.name, self.description, self.bookmark, self.workload, self.year, self.link, self.course_status))
+        print("\n\tTasks\n")
+        print("\n\t\tCurrent:\n")
+        for i in self.tasks:
+            if i.status == False:
+                print("\t\t\t%s"%(i.description))
+        print("\n\t\tArchived:\n")
+        for i in self.tasks:
+            if i.status == True:
+                print("\t\t\t%s"%(i.description))
+        print()
 
 
 

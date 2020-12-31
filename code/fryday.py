@@ -48,7 +48,6 @@ def read_contents(array):
 
 # initializing variables 
 file_name = ""
-
 fields = [] 
 
 #holding objects
@@ -56,8 +55,6 @@ current_tasks = [] #DONE
 sorted_current_tasks = []
 current_courses = [] #DONE
 
-archived_tasks = [] #DONE
-finished_courses = [] #DONE
 
 # backup file
 backup = open("backup.txt", 'w')
@@ -67,6 +64,7 @@ answer = input("\tWould you like to open an existing file ('y' or 'n'): ")
 existing_file = True 
 current_file = ""
 
+# determining if we are operating on a new file or not, and then taking the appropirate steps
 if answer.lower() == 'n':
     file_name = input("\tEnter a file name: ") 
     full_file = "data/" + file_name + ".txt"
@@ -79,9 +77,9 @@ else:
     existing_file = True
     full_file = "data/" + file_name + ".txt"
     current_file = open(full_file, 'r')
+
+
 # openining the file reading the contents 
-
-
 if existing_file == True:
     # populating array(s)
     field_number = 0
@@ -143,73 +141,59 @@ while answer != 'q':
             answer = ask_question()
 
         if answer.lower() == 'l':
-
-            # if the answer is not valid, ask again
+            # if we want to list active tasks(0), get active courses(1), get course(2) or field(3) description, or get achived tasks(4) or get finished courses(5)
             list_answer = list_question()
-            while list_answer not in [0,1,2,3,4,5]:
-                print("\n\tSorry, we didn't get that.")
-                list_answer = list_question()
-
             if list_answer == 0:
+
                 read_contents(sorted_current_tasks)
+
             elif list_answer == 1:
+
                 for i in fields:
                     i.get_current_courses()
+
             elif list_answer == 2:
+
                 read_contents(current_courses)
                 course_answer = int(input("\n\tSelect the course you would like to get the description of (0 if none): "))
+                current_courses[course_answer].describe_course()
 
-                if course_answer < 0 or course_answer > (len(current_courses) - 1):
-                    print("\n\tAnswer out of range.")
-                    answer = ask_question()
-                    continue
-
-                print(current_courses[course_answer])
             elif list_answer == 3:
+
                 read_contents(fields)
                 field_answer = int(input("\n\tSelect the field you would like to get the description of (0 if none): "))
-                
-                if field_answer < 0 or field_answer > (len(fields) - 1):
-                    print("\nAnswer out of range.")
-                    answer = ask_question()
-                    continue
-
                 fields[field_answer].describe_field()
+
             elif list_answer == 4:
+
                 for i in fields:
                     for course in i.courses:
                         course.get_archived_tasks()
+
             elif list_answer == 5:
+
                 for i in fields:
                     i.get_finished_courses()
+
             else:
                 print("\n\tInvalid option, try again")
+
         elif answer.lower() == 'c':
 
             # if the answer is not valid, ask again
             change_answer = change_question()
-            while change_answer not in [0,1,2]:
-                print("\n\tSorry, I didn't get that.")
-                change_answer = change_question()
 
             if change_answer == 0:
-                catagory = determine_catagory()
+                # if we want to add a task(0), course(1) or field(2)
 
-                # if the catagory is not valid, ask again
-                while catagory not in [0,1,2]:
-                    print("\n\tSorry, I didn't get that.")
-                    catagory = determine_catagory()
+                catagory = determine_catagory()
 
                 if catagory == 0:
 
                     read_contents(fields)
                     field_add = int(input("\n\tSelect the appropirate field for the task (0 if none): "))
-                    if field_add < 0 or field_add > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
-
                     valid_indexes = []
+
                     for index, course in enumerate(fields[field_add].courses):
                         if course.course_status == "S":
                             valid_indexes.append(index)
@@ -224,19 +208,13 @@ while answer != 'q':
                     # add task to course
                     fields[field_add].courses[task_add].user_add_task()
 
-                    # add the task to current task, and sort again
+                elif catagory == 1:
 
-                if catagory == 1:
                     read_contents(fields)
-
                     course_add = int(input("\n\tSelect the appropirate field for the course (0 if none): "))
-                    if course_add < 0 or course_add > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
-
                     fields[course_add].user_add_course()
-                if catagory == 2:
+
+                elif catagory == 2:
                     name = input("\tEnter name: ")
                     description = input("\tEnter description: ") 
                     purpose = input("\tEnter purpose: ")
@@ -248,29 +226,17 @@ while answer != 'q':
                     fields.append(Field(name, description, purpose, road_map))
 
             elif change_answer == 1:
+                # if we want to change the attributes of a task(0), course(1) or field(2) 
+
                 catagory = determine_catagory()
 
-                # if the catagory is not valid, ask again
-                while catagory not in [0,1,2]:
-                    print("\n\tSorry, I didn't get that.")
-                    catagory = determine_catagory()
-
                 if catagory == 0:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_task_selection = int(input("\n\tSelect the appropirate field for the task (0 if none): "))
-                    if field_task_selection < 0 or field_task_selection > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_task_selection].courses)
-
                     course_selection = int(input("\n\tSelect the appropirate course (0 if none): "))
-                    if course_selection < 0 or course_selection > (len(fields[field_task_selection].courses) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_task_selection].courses[course_selection].tasks)
                     task_selection = int(input("\n\tSelect the appropirate task (0 if none): "))
@@ -287,21 +253,12 @@ while answer != 'q':
                         print("\n\tInvalid operation.")
 
                 elif catagory == 1:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_course_selection = int(input("\n\tSelect the appropirate field for the course (0 if none): "))
-                    if field_course_selection < 0 or field_course_selection > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_course_selection].courses)
-
                     course_selection = int(input("\n\tSelect the appropirate course (0 if none): "))
-                    if course_selection < 0 or course_selection > (len(fields[field_course_selection].courses) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     operation = int(input("\n\tWhat would you like to do? \n\t[0] Mark course as started. \n\t[1] Mark course as finished. \n\t[2] Change workload. \n\t[3] Set bookmark. \n\t[4] Change name. \n\t[5] Change description. \n\t[6] Change link. \n\t: "))
 
@@ -323,13 +280,9 @@ while answer != 'q':
                         print("\n\tInvalid operation.")
 
                 elif catagory == 2:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_selection = int(input("\n\tSelect the appropirate field to change (0 if none): "))
-                    if field_selection < 0 or field_selection> (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     operation = int(input("\n\tWhat would you like to do? \n\t[0] Change name. \n\t[1] Change description. \n\t[2] Change purpose. \n\t[3] Change roadmap link. : "))
 
@@ -343,80 +296,53 @@ while answer != 'q':
                         fields[field_selection].change_link()
 
             elif change_answer == 2:
+
+                # if we want to delete a task(0), course(1), or field(2)
+
                 catagory = determine_catagory()
 
-                 # if the catagory is not valid, ask again
-                while catagory not in [0,1,2]:
-                    print("\n\tSorry, I didn't get that.")
-                    catagory = determine_catagory()
-
-
                 if catagory == 0:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_del = int(input("\n\tSelect the appropirate field for the task (0 if none): "))
-                    if field_del < 0 or field_del > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_del].courses)
-
                     course_del = int(input("\n\tSelect the appropirate course for the task (0 if none): "))
-                    if course_del < 0 or course_del > (len(fields[field_del].courses)):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_del].courses[course_del].tasks)
-                    
                     task_del = int(input("\n\tSelect the appropirate task to delete (0 if none): "))
-                    if task_del < 0 or task_del > (len(fields[field_del].courses[course_del].tasks[task_del]) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
-                    fields[field_del].courses[course_del].delete_task(task_del)
+                    del fields[field_del].courses[course_del].tasks[task_del]
                     print("\n\tTask deleted.")
 
                 elif catagory == 1:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_del = int(input("\n\tSelect the appropirate field for the course (0 if none): "))
-                    if field_del < 0 or field_del > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     read_contents(fields[field_del].courses)
-
                     course_del = int(input("\n\tSelect the appropirate course to delete (0 if none): "))
-                    if course_del < 0 or course_del > (len(fields[field_del].courses)):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     del fields[field_del].courses[course_del]
                     print("\n\tCourse deleted.")
 
                 elif catagory == 2:
-                    read_contents(fields)
 
+                    read_contents(fields)
                     field_del = int(input("\n\tSelect the appropirate field to delete (0 if none): "))
-                    if field_del < 0 or field_del > (len(fields) - 1):
-                        print("\n\tAnswer out of range.")
-                        answer = ask_question()
-                        continue
 
                     del fields[field_del]
                     print("\n\tField deleted.")
 
 
+        # update the lists and sort the tasks based on time
         update_secondary_lists(fields, current_courses, current_tasks) 
         sorted_current_tasks = sort_time(current_tasks)
         print("\n"+"-"*50)
         answer = ask_question()
     except:
+        # if an exeption occurs, then continue the main function
+        print("\n\tUnexpected option.")
         update_secondary_lists(fields, current_courses, current_tasks) 
         sorted_current_tasks = sort_time(current_tasks)
         print("\n"+"-"*50)
@@ -427,16 +353,14 @@ while answer != 'q':
 
 backup.close()
 
-if existing_file:
+if existing_file == True:
     current_file.close()
     os.remove(full_file)
     with open (full_file, 'w') as new_file:
         for field in fields:
             new_file.write("%s"%(field.database_description()))
 else:
-    for field in fields:
-        new_file.write("%s"%(field.database_description()))
-    current_file.close()
-
-
-
+    with open (full_file, 'w') as new_file:
+        for field in fields:
+            new_file.write("%s"%(field.database_description()))
+        current_file.close()
