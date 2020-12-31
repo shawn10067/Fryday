@@ -1,4 +1,6 @@
 Field|Western Computer Science|Computer Science at the Univercity of Western Ontario|To build an advanced artificial intelligence platform|https://www.csd.uwo.ca/|
+Course|1600: Introduction to Linear Algebra|A modern introduction to linear algebra|2020|NONE|1-2 Chapters + 1 webwork + quiz / week|Chapter 3.7|S|
+DONE_COURSE,|
 DONE_FIELD,|
 Field|Western Computer Engineering|Computer Engineering at the Univercity of Western Ontario|To build a complex set of physical computer systems|https://www.eng.uwo.ca/undergraduate/programs/computer.html|
 Course|1001: Physics|Introduction to Mechanics|2021|NONE|2 Chapters + 2 Webwork / week|Chapter 2.3|S|
