@@ -69,7 +69,7 @@ if answer.lower() == 'n':
     file_name = input("\tEnter a file name: ") 
     full_file = "data/" + file_name + ".txt"
     existing_file = False
-    current_file = open(full_file, 'w')
+    current_file = open(full_file, 'w+')
 else:
     file_name = input("\tEnter the catagory you wish to Fry (file name excluding extention): ")
     while not os.path.isfile("data/%s.txt"%file_name):
@@ -360,7 +360,6 @@ if existing_file == True:
         for field in fields:
             new_file.write("%s"%(field.database_description()))
 else:
-    with open (full_file, 'w') as new_file:
-        for field in fields:
-            new_file.write("%s"%(field.database_description()))
-        current_file.close()
+    for field in fields:
+        current_file.write("%s"%(field.database_description()))
+    current_file.close()
