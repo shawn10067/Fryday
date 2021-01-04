@@ -140,6 +140,13 @@ class Field():
             if course.course_status == "D":
                 print("\n\t\t\t%s"%(course.name))
 
+    # courses not started 
+    def get_courses_not_started(self):
+        print("\n\t%s\n\t\tCOURSES NOT STARTED:"%(self.name))
+        for course in self.courses:
+            if course.course_status == "N":
+                print("\n\t\t\t%s"%(course.name))
+
     # changing attributes for the course
     def change_name(self):
         self.name = input("\nEnter the new name for the field: ")
@@ -156,6 +163,7 @@ class Field():
     def change_purpose(self):
         self.purpose = input("Enter new purpose: ")
         print("\n\tPurpose has been changed.")
+        
 
     def __repr__(self):
         return "Field: %s; Link = %s"%(self.name, self.roadmap_link)

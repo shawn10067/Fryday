@@ -34,7 +34,7 @@ def ask_question():
 
 # asking what they want to list
 def list_question():
-    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t: "))
+    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t\n\t[6] Courses Not Started: "))
 
 def change_question():
     return int(input("\n\tWhat do you want to do?\n\t[0] Add\n\t[1] Change Attributes\n\t[2] Delete.\n\t: "))
@@ -145,7 +145,7 @@ while answer != 'q':
             answer = ask_question()
 
         if answer.lower() == 'l':
-            # if we want to list active tasks(0), get active courses(1), get course(2) or field(3) description, or get achived tasks(4) or get finished courses(5)
+            # if we want to list active tasks(0), get active courses(1), get course(2) or field(3) description, get achived tasks(4) get finished courses(5), or get courses not started (6)
             list_answer = list_question()
             if list_answer == 0:
 
@@ -178,6 +178,11 @@ while answer != 'q':
 
                 for i in fields:
                     i.get_finished_courses()
+
+            elif list_answer == 6:
+
+                for i in fields:
+                    i.get_courses_not_started()
 
             else:
                 print("\n\tInvalid option, try again")
