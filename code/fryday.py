@@ -34,7 +34,7 @@ def ask_question():
 
 # asking what they want to list
 def list_question():
-    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t\n\t[6] Courses Not Started: "))
+    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t[6] Courses Not Started\n\t: "))
 
 def change_question():
     return int(input("\n\tWhat do you want to do?\n\t[0] Add\n\t[1] Change Attributes\n\t[2] Delete.\n\t: "))
