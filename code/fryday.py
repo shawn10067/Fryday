@@ -44,6 +44,7 @@ def determine_catagory():
 
 # reading enumerated array contents function
 def read_contents(array):
+    print()
     for (index, content) in enumerate(array):
         print("\t[%-3d] %s."%(index, content))
 
@@ -253,7 +254,7 @@ while answer != 'q':
                     operation = int(input("\n\tWhat would you like to do? \n\t[0] Mark task as finished. \n\t[1] Change date of task. \n\t[2] Change description. \n\t: "))
 
                     if operation == 0:
-                        fields[field_task_selection].courses[course_selection].tasks[task_selection].finished_task()
+                        del fields[field_task_selection].courses[course_selection].tasks[task_selection]
                     elif operation == 1:
                         fields[field_task_selection].courses[course_selection].tasks[task_selection].change_date()
                     elif operation == 2:
