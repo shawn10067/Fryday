@@ -185,9 +185,9 @@ class Task():
 
     # string representation of task object
     def __repr__(self):
-        date_string = self.date.strftime("%b %d, %Y")
+        date_string = self.date.strftime("%A, %b %d, %Y")
         time_string = self.time.strftime("(%H:%M:%S)")
-        return "\t%-25s: %-38s\n\t\tDue %s at %s\n"%(self.course, self.description.upper(), date_string, time_string)
+        return "\t%-35s: %-38s\n\t\tDue %s at %s\n"%(self.course, self.description.upper(), date_string, time_string)
         
 
     # change date
