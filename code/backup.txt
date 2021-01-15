@@ -1,16 +1,27 @@
-Field|UWO Computer Science|Computer Science at the Univercity of Western Ontario|To build an advanced artificial intelligence plaform|NONE|
-Course|1600: Linear Algebra|Introduction to Linear Algebra|2020|NONE|NONE|NONE|S|
-Task|2020|12|31|12|0|Check final grade|False|1600: Linear Algebra|
+Field|Western Computer Science|Computer Science at the Univercity of Western Ontario|To build an advanced artificial intelligence platform|https://www.csd.uwo.ca/|
+Course|1020E: Political Science|Introduction to Political Science|2021|https://owl.uwo.ca/portal/site/adb0d0f9-4438-4c0d-8cc3-51be2669c6c0/tool/9b46853f-2fa1-445d-9621-7201db0bad7c|8-10 Lectures + 1 forum answer / week|Week 13|S|
+Task|2021|2|1|0|0|Essay Outline|False|1020E: Political Science|
+Task|2021|2|27|0|0|Midterm Exam|False|1020E: Political Science|
+Task|2021|3|22|0|0|Final Essay|False|1020E: Political Science|
+Task|2021|1|25|0|0|Finish the essay readings|False|1020E: Political Science|
+Task|2021|1|20|0|0|Finish making notes from earlier weeks|False|1020E: Political Science|
+Task|2021|1|13|0|0|Complete readings and review lessons|False|1020E: Political Science|
+Task|2021|1|13|11|55|Complete this week's quiz|False|1020E: Political Science|
+Task|2021|1|13|11|55|Participate in tutorial discussion forum and complete the question you have to make for the exam|False|1020E: Political Science|
 DONE_COURSE,|
-Course|1001: Physics|Introduction to Mechanics|2021|NONE|NONE|NONE|S|
-Task|2020|12|28|9|0|Hand in kinematics quiz|True|1001: Physics|
-Task|2020|12|31|0|0|Read chapter 1|True|1001: Physics|
+Course|1022: Film Studies|Introduction to Film Studies|2021|https://owl.uwo.ca/portal/site/62a457a7-5e51-40c7-a0fc-b60251af7a5a|40 minute lecture + readings + 1 tutorial / week|Week 14|S|
+Task|2021|1|21|19|0|Take Home Test|False|1022: Film Studies|
+Task|2021|2|1|0|0|Sequence Analysis (2 parts) will be assigned|False|1022: Film Studies|
+Task|2021|3|11|0|0|Sequence Analysis: Shot Breakdown|False|1022: Film Studies|
+Task|2021|4|2|11|55|Sequence Analysis Essay|False|1022: Film Studies|
 DONE_COURSE,|
-Course|1020E: Politicial Science|Introduction to Political Science|2020|NONE|NONE|NONE|S|
-Task|2021|12|20|0|0|Hand in Political Science forum answer|False|1022E: Political Science|
+Course|1301B: Calculus II|Introduction to Calculus II|2021|NONE|NONE|NONE|S|
+Task|2021|1|16|0|0|Finish chapter 5/6 for Calculus I|False|1301B: Calculus II|
+Task|2021|1|15|0|0|Read and watch video lectures for 3.1 and 3.2, complete the in-unit questions and compelete the first web-work assignment|False|1301B: Calculus II|
 DONE_COURSE,|
-DONE_FIELD,|
-Field|UWO Computer Engineering|Computer Engineering at Univercity of Western Ontario|To help build a complex web of physical computer systems|NONE|
-Course|1501A: Advanced Linear Algebra|Advanced Linear Algebra for Engineering|2021|https://owl.uwo.ca/portal/site/bddc1e91-8e9d-476a-9c14-3f53b467905f|4 lectures + 1-2 Webwork Quizzes + 2-4 Readings|Chapter 1.1|S|
+Course|1642B: Art History|Introduction to Art History|2021|NONE|NONE|NONE|S|
+Task|2021|2|12|0|0|Art project|False|1642B: Art History|
+DONE_COURSE,|
+Course|1027B: Computer Science Fundamentals II|Introduction to Computer Science Fundamentals II|2021|NONE|NONE|NONE|S|
 DONE_COURSE,|
 DONE_FIELD,|
