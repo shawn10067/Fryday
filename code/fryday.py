@@ -34,19 +34,20 @@ def ask_question():
 
 # asking what they want to list
 def list_question():
-    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t[6] Courses Not Started\n\t: "))
+    return int(input("\n\tWhat do you want to list?\n\t[0] Active Tasks\n\t[1] Current Courses\n\t[2] Description of a Course\n\t[3] Description of a Field\n\t[4] Archived Tasks\n\t[5] Archived Courses\n\t[6] Courses Not Started.\n\t" + 45*"*"+ "\n\t: "))
 
 def change_question():
-    return int(input("\n\tWhat do you want to do?\n\t[0] Add\n\t[1] Change Attributes\n\t[2] Delete.\n\t: "))
+    return int(input("\n\tWhat do you want to do?\n\t[0] Add\n\t[1] Change Attributes\n\t[2] Delete.\n\t" + 45*"*" + "\n\t: "))
 
 def determine_catagory():
-    return int(input("\n\tWhat would you like to operate on? \n\t[0] Task\n\t[1] Course\n\t[2] Field.\n\t: "))
+    return int(input("\n\tWhat would you like to operate on? \n\t[0] Task\n\t[1] Course\n\t[2] Field.\n\t" + 45*"*" + "\n\t: "))
 
 # reading enumerated array contents function
 def read_contents(array):
     print()
     for (index, content) in enumerate(array):
-        print("\t[%-3d] %s."%(index, content))
+        print("\n\t" + 50*"^")
+        print("\t[%-3d] %s"%(index, content))
 
 # initializing variables 
 file_name = ""
@@ -136,7 +137,7 @@ if existing_file == True:
 # prompting the user (main program)
 
 print("\n\tWELCOME TO FRYDAY.\n\tYou have %s fields and %s active tasks."%(len(fields), len(current_tasks)))
-print("\n"+"-"*50)
+print("\n\t"+"-"*50)
 answer = ask_question()
 
 while answer != 'q':
@@ -348,14 +349,14 @@ while answer != 'q':
         # update the lists and sort the tasks based on time
         update_secondary_lists(fields, current_courses, current_tasks) 
         sorted_current_tasks = sort_time(current_tasks)
-        print("\n"+"-"*50)
+        print("\n\t"+"-"*50)
         answer = ask_question()
     except:
         # if an exeption occurs, then continue the main function
         print("\n\tUnexpected option.")
         update_secondary_lists(fields, current_courses, current_tasks) 
         sorted_current_tasks = sort_time(current_tasks)
-        print("\n"+"-"*50)
+        print("\n\t"+"-"*50)
         answer = ask_question()
         continue
 
