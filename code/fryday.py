@@ -358,7 +358,6 @@ while answer != 'q':
         sorted_current_tasks = sort_time(current_tasks)
         print("\n\t"+"-"*50)
         answer = ask_question()
-        continue
 
 # writing output to the file
 

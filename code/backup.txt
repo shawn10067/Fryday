@@ -1,6 +1,7 @@
 Field|UWO Computer Science|Computer Science at the Univercity of Western Ontario|To build an advanced artificial intelligence plaform|NONE|
 Course|1600: Linear Algebra|Introduction to Linear Algebra|2020|NONE|NONE|NONE|S|
 Task|2020|12|31|12|0|Check final grade|False|1600: Linear Algebra|
+Task|2021|2|5|12|0|Message prof that his course was ass|False|1600: Linear Algebra|
 DONE_COURSE,|
 Course|1001: Physics|Introduction to Mechanics|2021|NONE|NONE|NONE|S|
 Task|2020|12|28|9|0|Hand in kinematics quiz|True|1001: Physics|
