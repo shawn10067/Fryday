@@ -243,23 +243,20 @@ while answer != 'q':
 
                 if catagory == 0:
 
-                    read_contents(fields)
-                    field_task_selection = int(input("\n\tSelect the appropirate field for the task (0 if none): "))
-
-                    read_contents(fields[field_task_selection].courses)
+                    read_contents(current_courses)
                     course_selection = int(input("\n\tSelect the appropirate course (0 if none): "))
 
-                    read_contents(fields[field_task_selection].courses[course_selection].tasks)
+                    read_contents(current_courses[course_selection].tasks)
                     task_selection = int(input("\n\tSelect the appropirate task (0 if none): "))
 
                     operation = int(input("\n\tWhat would you like to do? \n\t[0] Mark task as finished. \n\t[1] Change date of task. \n\t[2] Change description. \n\t: "))
 
                     if operation == 0:
-                        del fields[field_task_selection].courses[course_selection].tasks[task_selection]
+                        del current_courses[course_selection].tasks[task_selection]
                     elif operation == 1:
-                        fields[field_task_selection].courses[course_selection].tasks[task_selection].change_date()
+                        current_courses[course_selection].tasks[task_selection].change_date()
                     elif operation == 2:
-                        fields[field_task_selection].courses[course_selection].tasks[task_selection].change_description()
+                        current_courses[course_selection].tasks[task_selection].change_description()
                     else:
                         print("\n\tInvalid operation.")
 
